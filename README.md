@@ -1,5 +1,12 @@
 # el-saber
 
+## 24-08-05
+- azul
+- ropa
+- casa
+- Yo quiero una camisa verde
+- Una tienda de ropa
+
 ## 24-08-03
 - vivo / vives/ vive
 - queiro / quieres /quiere
