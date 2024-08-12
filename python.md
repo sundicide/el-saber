@@ -123,4 +123,80 @@ print(sliced_arr)
 # Slice the array a to get the array [1,3,5]
 sliced_arr = a[::2]
 print(sliced_arr)
+
+# Note that a == a[:] == a[::]
+print(f'a == a[:]: {a == a[:]}') # a == a[:]: [ True  True  True  True  True]
+print(f'a[:] == a[::]: {a[:] == a[::]}') # a[:] == a[::]: [ True  True  True  True  True]
+
+# Slice the two_dim array to get the first two rows
+sliced_arr_1 = two_dim[0:2]
+sliced_arr_1 # array([[1, 2, 3],
+             #        [4, 5, 6]])
+
+# Similarily, slice the two_dim array to get the last two rows
+sliced_two_dim_rows = two_dim[1:3]
+print(sliced_two_dim_rows) # [[4 5 6]
+                           #  [7 8 9]]
+
+# This example uses slice notation to get every row, and then pulls the second column.
+# Notice how this example combines slice notation with the use of multiple indexes
+sliced_two_dim_cols = two_dim[:,1]
+print(sliced_two_dim_cols) # [2 5 8]
+```
+
+```python
+a1 = np.array([[1,1], 
+               [2,2]])
+a2 = np.array([[3,3],
+              [4,4]])
+print(f'a1:\n{a1}') # a1:
+                    # [[1 1]
+                    #  [2 2]]
+print(f'a2:\n{a2}') # a2:
+                    # [[3 3]
+                    #  [4 4]]
+
+# Stack the arrays vertically
+vert_stack = np.vstack((a1, a2))
+print(vert_stack) # [[1 1]
+                  #  [2 2]
+                  #  [3 3]
+                  #  [4 4]]
+
+# Stack the arrays horizontally
+horz_stack = np.hstack((a1, a2))
+print(horz_stack) # [[1 1 3 3]
+                  #  [2 2 4 4]]
+
+# Split the horizontally stacked array into 2 separate arrays of equal size
+horz_split_two = np.hsplit(horz_stack,2)
+print(horz_split_two) # [array([[1, 1], [2, 2]]),
+                      #  array([[3, 3], [4, 4]])]
+
+# Split the horizontally stacked array into 4 separate arrays of equal size
+horz_split_four = np.hsplit(horz_stack,4)
+print(horz_split_four) # [array([[1], [2]]),
+                       #  array([[1], [2]]),
+                       #  array([[3], [4]]),
+                       #  array([[3], [4]])]
+
+# Split the horizontally stacked array after the first column
+horz_split_first = np.hsplit(horz_stack,[1])
+print(horz_split_first) # [array([[1], [2]]),
+                        #  array([[1, 3, 3], [2, 4, 4]])]
+
+
+# Split the vertically stacked array into 2 separate arrays of equal size
+vert_split_two = np.vsplit(vert_stack,2)
+print(vert_split_two)  # [array([[1, 1], [2, 2]]),
+                       #  array([[3, 3], [4, 4]])]
+
+# Split the vertically stacked array into 4 separate arrays of equal size
+vert_split_four = np.vsplit(vert_stack,4)
+print(vert_split_four) # [array([[1, 1]]), array([[2, 2]]), array([[3, 3]]), array([[4, 4]])]
+
+# Split the vertically stacked array after the first and third row
+vert_split_first_third = np.vsplit(vert_stack,[1,3])
+print(vert_split_first_third)  # [array([[1, 1]]), array([[2, 2], [3, 3]]), array([[4, 4]])]
+
 ```
