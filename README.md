@@ -1,5 +1,10 @@
 # el-saber
 
+- Esta muy enferno!
+- Ese hombre necesita ayuda!
+- Una mujer elegante habla con él.
+- pantalones
+
 ## 24-08-05
 - azul
 - ropa
